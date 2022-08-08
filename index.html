@@ -79,6 +79,8 @@
 
     .player__button {
         padding: 10px;
+
+        cursor: pointer;
     }
 
     .orange-juice {
@@ -125,9 +127,14 @@
     const ranges = player.querySelectorAll('.player__slider')
 
 
-    function togglePlay(){
+    function togglePlay(e){
         const method = video.paused ? 'play' : 'pause';
         video[method]();
+
+        if(e.keyCode == 32){
+            const method = video.paused ? 'play' : 'pause';
+            video[method]();
+        }
     }
 
     function updateButton() {
